@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: aqua;
+}
+
+h2 {
+    background-color: darkgray;
+    color: white;
+    width: 50%;
+    height: 10em;
+    font-size: larger;
+}
+
+div {
+    background-color: black;
+}
