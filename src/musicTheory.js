@@ -21,8 +21,6 @@ const Key =
 };
 
 // calculate 12-TET
-function getFrequency(note, octave)
-{
-    let desiredKey = (40 + note) + (octave - 4) * 12; // key 40 is C4
-    return referencePitch.Frequency * Math.pow((Math.pow(2, 1/12)), desiredKey - referencePitch.PianoKey)
-}
+getFrequencyFromNote = (note, octave=4) => getFrequencyFromKeyNumber(getKeyNumberFromNote(note, octave)); 
+getFrequencyFromKeyNumber = (requestedKey) => referencePitch.Frequency * Math.pow((Math.pow(2, 1/12)), requestedKey - referencePitch.PianoKey);
+getKeyNumberFromNote = (note, octave) => (40 + note) + (octave - 4) * 12; // key 40 is C4
