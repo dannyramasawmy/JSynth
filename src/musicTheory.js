@@ -1,3 +1,7 @@
+// =============================================================================
+//  Constants / enum-like objects
+// =============================================================================
+
 const referencePitch = 
 {
     Frequency: 440, // concert pitch A [Hz]
@@ -19,6 +23,33 @@ const Key =
     As: 10, Bb: 10,
     B: 11
 };
+
+// what to add to current key to get the correct interval
+const Intervals = 
+{
+    // basic
+    SemiTone: 1,
+    Tone: 2,
+
+    // compound
+    Root: 0,
+    FlatSecond: 1,
+    Second: 2,
+    SharpSecond: 3, FlatThird: 3,
+    Third: 4,
+    Fourth: 5,
+    SharpFourth: 6, FlatFifth: 6,
+    Fifth: 7,
+    SharpFifth: 8, FlatSixth: 8,
+    Sixth: 9,
+    FlatSeventh: 10, 
+    Seventh:  11,
+    Octave: 12
+}
+
+// =============================================================================
+//  Frequencies / key mapping
+// =============================================================================
 
 // calculate 12-TET
 getFrequencyFromNote = (note, octave=4) => getFrequencyFromKeyNumber(getKeyNumberFromNote(note, octave)); 
