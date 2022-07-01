@@ -1,5 +1,5 @@
 var counter = 0;
-var scale = LOCRIAN;
+var scale = MAJOR;
 var octave = 3;
 
 function clickOfButton()

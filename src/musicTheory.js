@@ -60,12 +60,27 @@ const PHRYGIAN = PermuteScale(DORIAN);
 const LYDIAN = PermuteScale(PHRYGIAN);
 const MIXOLYDIAN = PermuteScale(LYDIAN);
 const AEOLIAN = PermuteScale(MIXOLYDIAN);
+const NATURAL_MINOR = AEOLIAN;
 const LOCRIAN = PermuteScale(AEOLIAN);
 
 // modes of harmonic minor
 const HARMONIC_MINOR_SCALE = [INTERVALS.Root, INTERVALS.Second, INTERVALS.FlatThird, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.FlatSixth, INTERVALS.Seventh];
+const LOCRIAN_NATURAL_6 = PermuteScale(HARMONIC_MINOR_SCALE);
+const IONIAN_AUGMENTD_5 = PermuteScale(LOCRIAN_NATURAL_6);
+const DORIAN_SHARP_11 = PermuteScale(IONIAN_AUGMENTD_5);
+const PHRYGIAN_DOMINANT = PermuteScale(DORIAN_SHARP_11);
+const LYDIAN_SHARP_2 = PermuteScale(PHRYGIAN_DOMINANT);
+const SUPER_LOCRIAN_bb7 = PermuteScale(LYDIAN_SHARP_2);
 
+// modes of melodic minor
 const MELODIC_MINOR_SCALE = [INTERVALS.Root, INTERVALS.Second, INTERVALS.FlatThird, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.Sixth, INTERVALS.Seventh];
+const DORIAN_b2 = PermuteScale(MELODIC_MINOR_SCALE);
+const LYDIAN_AUGMENTED = PermuteScale(DORIAN_b2);
+const LYDIAN_DOMINANT = PermuteScale(LYDIAN_AUGMENTED);
+const MIXOLYDIAN_b6 = PermuteScale(LYDIAN_DOMINANT);
+const LOCRIAN_NATURAL_2 = PermuteScale(MIXOLYDIAN_b6);
+const ALTERED_DOMINANT = PermuteScale(LOCRIAN_NATURAL_2);
+const SUPER_LOCRIAN = ALTERED_DOMINANT;
 
 const HARMONIC_MAJOR_SCALE = [INTERVALS.Root, INTERVALS.Second, INTERVALS.Third, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.FlatSixth, INTERVALS.Seventh];
 
