@@ -46,12 +46,26 @@ const INTERVALS =
     Seventh:  11,
     Octave: 12
 }
+// =============================================================================
+//  Scale definitions
+// =============================================================================
 
+PermuteScale = (scale) => scale.slice(1,).concat(scale[0] + 12).map(x => x-scale[1]);
+
+// modes of major
 const IONIAN = [INTERVALS.Root, INTERVALS.Second, INTERVALS.Third, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.Sixth, INTERVALS.Seventh];
+const DORIAN = PermuteScale(IONIAN);
+const PHRYGIAN = PermuteScale(DORIAN);
+const LYDIAN = PermuteScale(PHRYGIAN);
+const MIXOLYDIAN = PermuteScale(LYDIAN);
+const AEOLIAN = PermuteScale(MIXOLYDIAN);
+const LOCRIAN = PermuteScale(AEOLIAN);
+
 
 const HARMONIC_MINOR_SCALE = 1;
 const HARMONIC_MAJOR_SCALE = 1;
 const MELODIC_MINOR_SCALE = 1;
+
 
 // =============================================================================
 //  Frequencies / key mapping
