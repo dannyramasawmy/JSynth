@@ -53,7 +53,8 @@ const INTERVALS =
 PermuteScale = (scale) => scale.slice(1,).concat(scale[0] + 12).map(x => x-scale[1]);
 
 // modes of major
-const IONIAN = [INTERVALS.Root, INTERVALS.Second, INTERVALS.Third, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.Sixth, INTERVALS.Seventh];
+const MAJOR = [INTERVALS.Root, INTERVALS.Second, INTERVALS.Third, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.Sixth, INTERVALS.Seventh];
+const IONIAN = MAJOR;
 const DORIAN = PermuteScale(IONIAN);
 const PHRYGIAN = PermuteScale(DORIAN);
 const LYDIAN = PermuteScale(PHRYGIAN);
@@ -61,11 +62,14 @@ const MIXOLYDIAN = PermuteScale(LYDIAN);
 const AEOLIAN = PermuteScale(MIXOLYDIAN);
 const LOCRIAN = PermuteScale(AEOLIAN);
 
+// modes of harmonic minor
+const HARMONIC_MINOR_SCALE = [INTERVALS.Root, INTERVALS.Second, INTERVALS.FlatThird, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.FlatSixth, INTERVALS.Seventh];
 
-const HARMONIC_MINOR_SCALE = 1;
-const HARMONIC_MAJOR_SCALE = 1;
-const MELODIC_MINOR_SCALE = 1;
+const MELODIC_MINOR_SCALE = [INTERVALS.Root, INTERVALS.Second, INTERVALS.FlatThird, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.Sixth, INTERVALS.Seventh];
 
+const HARMONIC_MAJOR_SCALE = [INTERVALS.Root, INTERVALS.Second, INTERVALS.Third, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.FlatSixth, INTERVALS.Seventh];
+
+const DOUBLE_HARMONIC_MAJOR_SCALE = [INTERVALS.Root, INTERVALS.FlatSecond, INTERVALS.Third, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.FlatSixth, INTERVALS.Seventh];
 
 // =============================================================================
 //  Frequencies / key mapping
