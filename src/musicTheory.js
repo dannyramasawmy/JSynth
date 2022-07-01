@@ -2,13 +2,13 @@
 //  Constants / enum-like objects
 // =============================================================================
 
-const referencePitch = 
+const REFERENCE_PITCH = 
 {
     Frequency: 440, // concert pitch A [Hz]
     PianoKey: 49
 } 
 
-const Key = 
+const KEY = 
 {
     C: 0,
     Cs: 1, Db: 1,
@@ -25,7 +25,7 @@ const Key =
 };
 
 // what to add to current key to get the correct interval
-const Intervals = 
+const INTERVALS = 
 {
     // basic
     SemiTone: 1,
@@ -47,11 +47,17 @@ const Intervals =
     Octave: 12
 }
 
+const IONIAN = [INTERVALS.Root, INTERVALS.Second, INTERVALS.Third, INTERVALS.Fourth, INTERVALS.Fifth, INTERVALS.Sixth, INTERVALS.Seventh];
+
+const HARMONIC_MINOR_SCALE = 1;
+const HARMONIC_MAJOR_SCALE = 1;
+const MELODIC_MINOR_SCALE = 1;
+
 // =============================================================================
 //  Frequencies / key mapping
 // =============================================================================
 
 // calculate 12-TET
-getFrequencyFromNote = (note, octave=4) => getFrequencyFromKeyNumber(getKeyNumberFromNote(note, octave)); 
-getFrequencyFromKeyNumber = (requestedKey) => referencePitch.Frequency * Math.pow((Math.pow(2, 1/12)), requestedKey - referencePitch.PianoKey);
-getKeyNumberFromNote = (note, octave) => (40 + note) + (octave - 4) * 12; // key 40 is C4
+GetFrequencyFromNote = (note, octave=4) => GetFrequencyFromKeyNumber(GetKeyNumberFromNote(note, octave)); 
+GetFrequencyFromKeyNumber = (requestedKey) => REFERENCE_PITCH.Frequency * Math.pow((Math.pow(2, 1/12)), requestedKey - REFERENCE_PITCH.PianoKey);
+GetKeyNumberFromNote = (note, octave) => (40 + note) + (octave - 4) * 12; // key 40 is C4
