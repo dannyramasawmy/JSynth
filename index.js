@@ -1,24 +1,22 @@
-var counter = 0;
 var scale = MAJOR;
-var octave = 3;
 
-function clickOfButton()
+
+function clickOfButton(value)
 {
     console.log("Clicked!");
 
-    counter = counter % scale.length;
+    var octave = 4 + Math.floor(value/7);
+    var key = value % 7;
+
     let referenceKey = GetKeyNumberFromNote(KEY.C, octave); 
 
     var context = new AudioContext();
+    
     var oscillator = context.createOscillator();
     oscillator.type = "sine";
-    oscillator.frequency.value = GetFrequencyFromKeyNumber(referenceKey + scale[counter]);
+    oscillator.frequency.value = GetFrequencyFromKeyNumber(referenceKey + scale[key]);
     oscillator.connect(context.destination);
     oscillator.start(); 
-    
-    counter++;
-    if (counter == scale.length)
-        octave++;
 
     // Beep for 500 milliseconds
     setTimeout(function () {

@@ -7,13 +7,23 @@ h1 {
 }
 
 h2 {
-    background-color: darkgray;
-    color: white;
-    width: 50%;
-    height: 10em;
+    color: black;
     font-size: larger;
+    vertical-align: middle;
 }
 
-div {
-    background-color: black;
+.keyboard {
+    display: flex;
+}
+
+.piano-key {
+    background-color: ivory;
+    border-radius: 100%;
+    margin: 5px;
+    padding: 1em;
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
 }
